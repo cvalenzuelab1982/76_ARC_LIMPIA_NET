@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CORE", "CORE", "{8A5F96A6-B1E2-4D45-9FEA-8277C61B8915}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "INFRAESTRUCTURA", "INFRAESTRUCTURA", "{4C0BE717-2A5E-43E2-AD5D-020A088C7556}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PRUEBAS", "PRUEBAS", "{A4942603-412E-4429-93DF-1F5CFDDE4347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DientesLimpios.Dominio", "DientesLimpios.Dominio\DientesLimpios.Dominio.csproj", "{AC73EB73-8C93-4B37-ADA4-7F94B521586E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DientesLimpios.Pruebas", "DientesLimpios.Pruebas\DientesLimpios.Pruebas.csproj", "{B03202DD-077C-418F-BCD3-2FD0E6BB0CBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC73EB73-8C93-4B37-ADA4-7F94B521586E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC73EB73-8C93-4B37-ADA4-7F94B521586E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC73EB73-8C93-4B37-ADA4-7F94B521586E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC73EB73-8C93-4B37-ADA4-7F94B521586E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03202DD-077C-418F-BCD3-2FD0E6BB0CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03202DD-077C-418F-BCD3-2FD0E6BB0CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03202DD-077C-418F-BCD3-2FD0E6BB0CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03202DD-077C-418F-BCD3-2FD0E6BB0CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC73EB73-8C93-4B37-ADA4-7F94B521586E} = {8A5F96A6-B1E2-4D45-9FEA-8277C61B8915}
+		{B03202DD-077C-418F-BCD3-2FD0E6BB0CBE} = {A4942603-412E-4429-93DF-1F5CFDDE4347}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09BB01DB-56AC-4E13-A90D-1DC3279E6853}
+	EndGlobalSection
+EndGlobal
