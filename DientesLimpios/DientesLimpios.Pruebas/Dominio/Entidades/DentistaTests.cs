@@ -5,7 +5,7 @@ using DientesLimpios.Dominio.ObjetosValor;
 namespace DientesLimpios.Pruebas.Dominio.Entidades
 {
     [TestClass]
-    public class DentistaTest
+    public class DentistaTests
     {
         [TestMethod]
         [ExpectedException(typeof(ExcepcionDeReglaDeNegocio))]

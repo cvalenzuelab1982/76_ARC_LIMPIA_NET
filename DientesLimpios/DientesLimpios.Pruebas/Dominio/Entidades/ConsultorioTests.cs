@@ -4,7 +4,7 @@ using DientesLimpios.Dominio.Excepciones;
 namespace DientesLimpios.Pruebas.Dominio.Entidades
 {
     [TestClass]
-    public class ConsultorioTest
+    public class ConsultorioTests
     {
         [TestMethod]
         [ExpectedException(typeof(ExcepcionDeReglaDeNegocio))]

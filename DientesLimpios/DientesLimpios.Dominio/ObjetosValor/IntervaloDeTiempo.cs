@@ -1,9 +1,4 @@
 ﻿using DientesLimpios.Dominio.Excepciones;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Dominio.ObjetosValor
 {
@@ -19,8 +14,8 @@ namespace DientesLimpios.Dominio.ObjetosValor
                 throw new ExcepcionDeReglaDeNegocio($"La hora de inicio debe ser anterior a la hora de fin");
             }
 
-            Inicio  = inicio;
-            Fin = fin;  
+            Inicio = inicio;
+            Fin = fin;
         }
     }
 }

@@ -1,16 +1,11 @@
 ﻿using DientesLimpios.Dominio.Entidades;
 using DientesLimpios.Dominio.Excepciones;
 using DientesLimpios.Dominio.ObjetosValor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Pruebas.Dominio.Entidades
 {
     [TestClass]
-    public class PacienteTest
+    public class PacienteTests
     {
         [TestMethod]
         [ExpectedException(typeof(ExcepcionDeReglaDeNegocio))]

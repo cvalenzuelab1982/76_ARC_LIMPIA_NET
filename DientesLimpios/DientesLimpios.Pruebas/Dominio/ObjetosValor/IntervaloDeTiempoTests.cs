@@ -1,15 +1,10 @@
 ﻿using DientesLimpios.Dominio.Excepciones;
 using DientesLimpios.Dominio.ObjetosValor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Pruebas.Dominio.ObjetosValor
 {
     [TestClass]
-    public class IntervaloDeTiempoTest
+    public class IntervaloDeTiempoTests
     {
         [TestMethod]
         [ExpectedException(typeof(ExcepcionDeReglaDeNegocio))]

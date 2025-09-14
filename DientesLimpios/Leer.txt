@@ -1,0 +1,14 @@
+Patrones usado:
+-Patron CQRS
+-Patron repositorio
+-Patron UnitOfWork
+
+
+Referencia:
+Capa Aplicacion necesita referencia de Dominio
+
+
+
+Referencia para ambiente de pruebas
+Capa Pruebas necesita referencia de Dominio
+Capa Pruebas necesita referencia de Aplicacion

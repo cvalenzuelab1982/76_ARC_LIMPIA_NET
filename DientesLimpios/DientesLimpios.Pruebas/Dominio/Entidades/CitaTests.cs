@@ -2,16 +2,11 @@
 using DientesLimpios.Dominio.Enums;
 using DientesLimpios.Dominio.Excepciones;
 using DientesLimpios.Dominio.ObjetosValor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Pruebas.Dominio.Entidades
 {
     [TestClass]
-    public class CitaTest
+    public class CitaTests
     {
         private Guid _pacienteId = Guid.NewGuid();
         private Guid _dentistaId = Guid.NewGuid();

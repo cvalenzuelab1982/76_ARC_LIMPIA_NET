@@ -1,9 +1,4 @@
 ﻿using DientesLimpios.Dominio.Excepciones;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Dominio.ObjetosValor
 {
@@ -23,7 +18,7 @@ namespace DientesLimpios.Dominio.ObjetosValor
                 throw new ExcepcionDeReglaDeNegocio($"El {nameof(email)} no es valido");
             }
 
-            Valor = email;  
+            Valor = email;
         }
     }
 }
