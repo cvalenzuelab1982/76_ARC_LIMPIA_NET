@@ -1,33 +1,25 @@
 ﻿using DientesLimpios.Aplicacion.Contratos.Persitencia;
 using DientesLimpios.Aplicacion.Contratos.Repositorios;
 using DientesLimpios.Aplicacion.Excepciones;
+using DientesLimpios.Aplicacion.Utilidades.Mediador;
 using DientesLimpios.Dominio.Entidades;
 using FluentValidation;
-using System.ComponentModel.DataAnnotations;
 
 namespace DientesLimpios.Aplicacion.CasosDeUso.Consultorios.Comandos.CrearConsultorio
 {
-    public class CuCrearConsultorio
+    public class CuCrearConsultorio : IRequestHandler<CmdCrearConsultorio, Guid>
     {
         private readonly IRepositorioConsultorios _Repositorio;
         private readonly IUnidadDeTrabajo _UnidadDeTrabajo;
-        private readonly IValidator<CmdCrearConsultorio> _Validador;
 
-        public CuCrearConsultorio(IRepositorioConsultorios repositorio, IUnidadDeTrabajo unidadDeTrabajo, IValidator<CmdCrearConsultorio> validador)
+        public CuCrearConsultorio(IRepositorioConsultorios repositorio, IUnidadDeTrabajo unidadDeTrabajo)
         {
             _Repositorio = repositorio;
             _UnidadDeTrabajo = unidadDeTrabajo;
-            _Validador = validador;
         }
 
         public async Task<Guid> Handle(CmdCrearConsultorio comando)
         {
-            var resultadoValidacion = await _Validador.ValidateAsync(comando);
-            if (!resultadoValidacion.IsValid)
-            {
-                throw new ExcepcionDeValidacion(resultadoValidacion);
-            }
-
             var consultorio = new Consultorio(comando.Nombre);
 
             try
@@ -41,8 +33,6 @@ namespace DientesLimpios.Aplicacion.CasosDeUso.Consultorios.Comandos.CrearConsul
                 await _UnidadDeTrabajo.Reversar();
                 throw;
             }
-
-
         }
     }
 }

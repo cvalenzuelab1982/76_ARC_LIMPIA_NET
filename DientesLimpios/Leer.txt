@@ -2,6 +2,7 @@ Patrones usado:
 -Patron CQRS
 -Patron repositorio
 -Patron UnitOfWork
+-Patron Mediador
 
 
 Referencia:
