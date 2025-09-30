@@ -7,7 +7,8 @@ Patrones usado:
 
 Referencia:
 Capa Aplicacion necesita referencia de Dominio
-
+Capa Infraestructura necesita referencia de Aplicacion
+Capa API necesita referencias de Aplicacion y Persistencia
 
 
 Referencia para ambiente de pruebas

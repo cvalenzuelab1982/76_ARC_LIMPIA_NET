@@ -1,0 +1,12 @@
+@DientesLimpios.API_HostAddress = http://localhost:5002/api/consultorios
+
+GET {{DientesLimpios.API_HostAddress}}/01999B7B-F73B-7A18-AD31-55CC7EC6F1BC
+Accept: application/json
+
+###
+POST {{DientesLimpios.API_HostAddress}}
+Content-Type: application/json
+
+{
+  "nombre":"Consultorio A"
+}

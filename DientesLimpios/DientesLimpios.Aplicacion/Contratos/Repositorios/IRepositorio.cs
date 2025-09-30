@@ -4,7 +4,7 @@
     {
         Task<T?> ObtenerPorId(Guid id);
         Task<IEnumerable<T>> ObtenerTodos();
-        Task<T?> Agregar(T entidad);
+        Task<T> Agregar(T entidad);
         Task Actualizar(T entidad);
         Task Borrar(T entidad);
     }

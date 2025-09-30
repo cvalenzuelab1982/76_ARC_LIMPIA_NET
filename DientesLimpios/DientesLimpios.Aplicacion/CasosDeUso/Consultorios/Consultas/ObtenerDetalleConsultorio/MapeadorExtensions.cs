@@ -11,7 +11,7 @@ namespace DientesLimpios.Aplicacion.CasosDeUso.Consultorios.Consultas.ObtenerDet
     {
         public static ConsultorioDetalleDTO ADto(this Consultorio consultorio)
         {
-            var dto = new ConsultorioDetalleDTO { Id = consultorio!.Id, Nombre = consultorio.Nombre };
+            var dto = new ConsultorioDetalleDTO { Id = consultorio.Id, Nombre = consultorio.Nombre };
             return dto;
         }
     }
