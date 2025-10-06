@@ -1,10 +1,5 @@
 ﻿using DientesLimpios.Aplicacion.Contratos.Repositorios;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Persintencia.Repositorios
 {
@@ -43,6 +38,11 @@ namespace DientesLimpios.Persintencia.Repositorios
         public async Task<IEnumerable<T>> ObtenerTodos()
         {
             return await _Context.Set<T>().ToListAsync();
+        }
+
+        public async Task<int> ObtenerCantidadTotalRegistros()
+        {
+            return await _Context.Set<T>().CountAsync();
         }
     }
 }

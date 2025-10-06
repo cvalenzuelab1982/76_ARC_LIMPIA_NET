@@ -1,17 +1,9 @@
 ﻿using DientesLimpios.Aplicacion.CasosDeUso.Consultorios.Comandos.CrearConsultorio;
 using DientesLimpios.Aplicacion.Contratos.Persitencia;
 using DientesLimpios.Aplicacion.Contratos.Repositorios;
-using DientesLimpios.Aplicacion.Excepciones;
 using DientesLimpios.Dominio.Entidades;
-using FluentValidation;
-using FluentValidation.Results;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Pruebas.Aplicacion.CasosDeUso.Consultorios
 {

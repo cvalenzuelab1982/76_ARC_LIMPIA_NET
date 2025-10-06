@@ -2,20 +2,15 @@
 using DientesLimpios.Aplicacion.Utilidades.Mediador;
 using FluentValidation;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Pruebas.Aplicacion.Utilidades.Mediador
 {
     [TestClass]
     public class MediadorSimpleTests
     {
-        public class RequestFalso : IRequest<string> 
-        { 
-            public required string Nombre{ get; set; }
+        public class RequestFalso : IRequest<string>
+        {
+            public required string Nombre { get; set; }
         }
 
         public class HandlerFalso : IRequestHandler<RequestFalso, string>
@@ -39,7 +34,7 @@ namespace DientesLimpios.Pruebas.Aplicacion.Utilidades.Mediador
         {
             var request = new RequestFalso() { Nombre = "Nombre A" };
             var casoDeUsoMock = Substitute.For<IRequestHandler<RequestFalso, string>>();
-            var serviceProvider = Substitute.For<IServiceProvider>();   
+            var serviceProvider = Substitute.For<IServiceProvider>();
             serviceProvider
                 .GetService(typeof(IRequestHandler<RequestFalso, string>))
                 .Returns(casoDeUsoMock);
@@ -66,7 +61,7 @@ namespace DientesLimpios.Pruebas.Aplicacion.Utilidades.Mediador
             var request = new RequestFalso() { Nombre = "" };
             var serviceProvider = Substitute.For<IServiceProvider>();
             var validador = new ValidadorRequestFalso();
-            
+
             serviceProvider
                 .GetService(typeof(IValidator<RequestFalso>))
                 .Returns(validador);

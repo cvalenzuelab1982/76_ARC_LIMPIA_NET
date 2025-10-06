@@ -4,11 +4,6 @@ using DientesLimpios.Aplicacion.Excepciones;
 using DientesLimpios.Dominio.Entidades;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DientesLimpios.Pruebas.Aplicacion.CasosDeUso.Consultorios
 {
@@ -48,11 +43,11 @@ namespace DientesLimpios.Pruebas.Aplicacion.CasosDeUso.Consultorios
 
         [TestMethod]
         [ExpectedException(typeof(ExcepcionNoEncontrado))]
-        public async Task Handle_ConsultorioNoExiste_LanzaExcepcionNoEncontrado() 
+        public async Task Handle_ConsultorioNoExiste_LanzaExcepcionNoEncontrado()
         {
             //Preparacion
             var id = Guid.NewGuid();
-            var consulta = new ConsultaObtenerDetalleConsultorio{Id = id};  
+            var consulta = new ConsultaObtenerDetalleConsultorio { Id = id };
 
             _Repositorio.ObtenerPorId(id).ReturnsNull();
 

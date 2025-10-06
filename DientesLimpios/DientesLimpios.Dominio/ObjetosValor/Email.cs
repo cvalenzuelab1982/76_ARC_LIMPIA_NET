@@ -6,6 +6,11 @@ namespace DientesLimpios.Dominio.ObjetosValor
     {
         public string Valor { get; } = null!;
 
+        private Email()
+        {
+            
+        }
+
         public Email(string email)
         {
             if (string.IsNullOrWhiteSpace(email))

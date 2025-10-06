@@ -15,6 +15,38 @@ namespace DientesLimpios.Aplicacion.Utilidades.Mediador
 
         public async Task<TResponse> Send<TResponse>(IRequest<TResponse> request)
         {
+            await RealizarValidaciones(request);    
+
+            var tipoCasoDeUso = typeof(IRequestHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
+            var casoDeUso = _ServiceProvider.GetService(tipoCasoDeUso);
+
+            if (casoDeUso is null)
+            {
+                throw new ExcepcionDeMediador($"No se encontro un handler para {request.GetType().Name}");
+            }
+
+            var metodo = tipoCasoDeUso.GetMethod("Handle")!;
+            return await (Task<TResponse>)metodo.Invoke(casoDeUso, new object[] { request })!;
+        }
+
+        public async Task Send(IRequest request)
+        {
+            await RealizarValidaciones(request);
+
+            var tipoCasoDeUso = typeof(IRequestHandler<>).MakeGenericType(request.GetType());
+            var casoDeUso = _ServiceProvider.GetService(tipoCasoDeUso);
+
+            if (casoDeUso is null)
+            {
+                throw new ExcepcionDeMediador($"No se encontro un handler para {request.GetType().Name}");
+            }
+
+            var metodo = tipoCasoDeUso.GetMethod("Handle")!;
+            await (Task)metodo.Invoke(casoDeUso, new object[] { request })!;
+        }
+
+        public async Task RealizarValidaciones(object request)
+        {
             var tipoValidador = typeof(IValidator<>).MakeGenericType(request.GetType());
             var validador = _ServiceProvider.GetService(tipoValidador);
 
@@ -32,17 +64,6 @@ namespace DientesLimpios.Aplicacion.Utilidades.Mediador
                     throw new ExcepcionDeValidacion(validationResult);
                 }
             }
-
-            var tipoCasoDeUso = typeof(IRequestHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
-            var casoDeUso = _ServiceProvider.GetService(tipoCasoDeUso);
-
-            if (casoDeUso is null)
-            {
-                throw new ExcepcionDeMediador($"No se encontro un handler para {request.GetType().Name}");
-            }
-
-            var metodo = tipoCasoDeUso.GetMethod("Handle")!;
-            return await (Task<TResponse>)metodo.Invoke(casoDeUso, new object[] { request })!;
         }
     }
 }
