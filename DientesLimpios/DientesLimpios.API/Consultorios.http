@@ -12,7 +12,7 @@ POST {{DientesLimpios.API_HostAddress}}
 Content-Type: application/json
 
 {
-  "nombre":"Consultorio A"
+  "nombre":"Consultorio B"
 }
 
 ###

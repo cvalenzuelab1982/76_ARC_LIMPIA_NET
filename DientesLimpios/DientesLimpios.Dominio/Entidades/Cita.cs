@@ -13,7 +13,7 @@ namespace DientesLimpios.Dominio.Entidades
         public EstadoCita Estado { get; private set; }
         public IntervaloDeTiempo IntervaloDeTiempo { get; private set; } = null!;
         public Paciente? Paciente { get; private set; }
-        public Dentista? Destista { get; private set; }
+        public Dentista? Dentista { get; private set; }
         public Consultorio? Consultorio { get; private set; }
 
         private Cita()
@@ -23,8 +23,8 @@ namespace DientesLimpios.Dominio.Entidades
 
         public Cita(Guid pacienteId, Guid dentistadId, Guid consultorioId, IntervaloDeTiempo intervaloDeTiempo)
         {
-           
-            if (intervaloDeTiempo.Inicio < DateTime.UtcNow)
+            var horaLocal = DateTime.Now;
+            if (intervaloDeTiempo.Inicio < horaLocal)
             {
                 throw new ExcepcionDeReglaDeNegocio($"La fecha de inicio no puede ser anterior a la fecha actual");
             }

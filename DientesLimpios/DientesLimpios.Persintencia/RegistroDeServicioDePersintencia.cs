@@ -16,6 +16,8 @@ namespace DientesLimpios.Persintencia
             //
             services.AddScoped<IRepositorioConsultorios, RepositorioConsultorios>();
             services.AddScoped<IRepositoriosPacientes, RepositoriosPacientes>();
+            services.AddScoped<IRepositorioDentista, RepositorioDentista>();
+            services.AddScoped<IRepositorioCitas, RepositorioCitas>();
 
             //
             services.AddScoped<IUnidadDeTrabajo, UnidadDeTrabajoEFCore>();

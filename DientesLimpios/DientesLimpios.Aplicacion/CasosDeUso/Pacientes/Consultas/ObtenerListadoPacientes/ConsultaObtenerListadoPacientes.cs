@@ -5,5 +5,6 @@ namespace DientesLimpios.Aplicacion.CasosDeUso.Pacientes.Consultas.ObtenerListad
 {
     public class ConsultaObtenerListadoPacientes : FiltroPacienteDTO, IRequest<PaginadoDTO<PacienteListadoDTO>>
     {
+
     }
 }
