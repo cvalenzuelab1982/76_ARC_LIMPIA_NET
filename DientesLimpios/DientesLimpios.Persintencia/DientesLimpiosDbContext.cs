@@ -1,18 +1,45 @@
-﻿using DientesLimpios.Dominio.Entidades;
+﻿using DientesLimpios.Aplicacion.Contratos.Identidad;
+using DientesLimpios.Dominio.Comunes;
+using DientesLimpios.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 
 namespace DientesLimpios.Persintencia
 {
     public class DientesLimpiosDbContext : DbContext
     {
-        public DientesLimpiosDbContext(DbContextOptions<DientesLimpiosDbContext> options) : base(options)
+        private readonly IServiciosUsuarios? _serviciosUsuarios;
+
+        public DientesLimpiosDbContext(DbContextOptions<DientesLimpiosDbContext> options, IServiciosUsuarios serviciosUsuarios) : base(options)
+        {
+            _serviciosUsuarios = serviciosUsuarios;
+        }
+
+        protected DientesLimpiosDbContext()
         {
 
         }
 
-        public DientesLimpiosDbContext()
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
+            if (_serviciosUsuarios is not null)
+            {
+                foreach (var entry in ChangeTracker.Entries<EntidadAuditable>())
+                {
+                    switch (entry.State)
+                    {
+                        case EntityState.Added:
+                            entry.Entity.FechaCreacion = DateTime.UtcNow;
+                            entry.Entity.CreadoPor = _serviciosUsuarios.ObtenerUsuarioId();
+                            break;
+                        case EntityState.Modified:
+                            entry.Entity.UltimaFechaModificacion = DateTime.UtcNow;
+                            entry.Entity.UltimaModificacionPor = _serviciosUsuarios.ObtenerUsuarioId();
+                            break;
+                    }
+                }
+            }
 
+            return base.SaveChangesAsync(cancellationToken);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

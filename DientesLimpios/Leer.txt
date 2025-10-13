@@ -6,13 +6,12 @@ Patrones usado:
 
 
 Referencia:
-Capa API/DientesLimpios.API necesita referencias de Aplicacion, Persistencia e Infraestructura
+Capa API/DientesLimpios.API necesita referencias de Aplicacion, Persistencia, Infraestructura e Identidad
 Capa CORE/DientesLimpios.Aplicacion necesita referencia de Dominio
 Capa CORE/DientesLimpios.Dominio no necesita referencias
 Capa INFRAESTRUCTURA/DientesLimpios.Infraestructura necesita referencia Aplicacion
 Capa INFRAESTRUCTURA/DientesLimpios.Persintencia necesita referencia Aplicacion
-
-
+Capa INFRAESTRUCTURA/DientesLimpios.Identidad necesita referencia Aplicacion
 
 
 Referencia para ambiente de pruebas
